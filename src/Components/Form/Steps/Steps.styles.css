@@ -1,0 +1,52 @@
+.step_container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease-in-out;
+}
+
+.step_container:hover {
+  background-color: #ffffff20;
+}
+
+.step_container.active {
+  background-color: #ffffff20;
+}
+
+.step_circle-no {
+  font-size: 1.4rem;
+  font-weight: 400;
+  border: 1px solid var(--color-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 100%;
+  margin-right: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.step_circle-no.active {
+  background-color: var(--color-light-blue);
+  color: var(--color-navy);
+  border: 1px solid var(--color-light-blue);
+  font-weight: 500;
+}
+
+.step_info-subtitle {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.step_info-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+}

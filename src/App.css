@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css');
+
+:root {
+  --color-grey: #eef5ff;
+  --color-blue: #483eff;
+  --color-light-blue: #bee1fc;
+  --color-dark-blue: #174a8b;
+  --color-navy: #03295a;
+  --color-navy-95: #03295ad9;
+  --color-navy-10: #03295a10;
+  --color-white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-grey);
+  color: var(--color-navy);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.disabled {
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0.3;
+}

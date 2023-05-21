@@ -1,0 +1,111 @@
+.form-plan_cards-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-plan_card {
+  width: 31%;
+  border: 1px solid #00000020;
+  padding: 1.8rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.5;
+}
+
+.form-plan_card.selected {
+  border: 1px solid #535095;
+  background-color: #f8f9fe;
+  opacity: 1;
+}
+
+.form-plan_card:hover {
+  border: 1px solid #535095;
+  opacity: 1;
+}
+
+.form-plan_card-content h3 {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.form-plan_card-content h4 {
+  color: #00000090;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.form-plan_card-icon {
+  background-color: var(--color-navy);
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-bottom: 10rem;
+}
+
+.Arcade {
+  margin-left: 0.6rem;
+}
+
+#plan_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.3rem;
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.2rem;
+}
+
+/*Toggle*/
+.form_monthly-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding: 3rem 2rem;
+  background-color: #00000005;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+}
+
+.form_toggle-p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  opacity: 0.35;
+  transition: all 0.3s ease-in-out;
+}
+
+.form_toggle-p.active {
+  opacity: 1;
+}
+
+.form_monthly-toggle {
+  background-color: var(--color-navy);
+  width: 5rem;
+  height: 2.2rem;
+  border-radius: 50rem;
+  margin: 0 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.form_monthly-toggle-dot {
+  background-color: #fff;
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  top: 0.46rem;
+  left: 10%;
+  border-radius: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.form_monthly-toggle-dot.yearly {
+  left: unset;
+  right: 10%;
+}

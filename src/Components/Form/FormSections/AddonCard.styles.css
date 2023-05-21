@@ -1,0 +1,57 @@
+.addon_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 3rem 2rem;
+  border: 1px solid #00000020;
+  border-radius: 1rem;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: all 0.2s ease-in-out;
+}
+
+.addon_container:hover {
+  border: 1px solid #535095;
+  background-color: #f8f9fe;
+  opacity: 1;
+}
+
+.addon_container.active {
+  border: 1px solid #535095;
+  background-color: #f8f9fe;
+  opacity: 1;
+}
+
+.addon_text h3 {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.addon_text h4 {
+  color: #00000090;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.addon_fees {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.addon_checkbox {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  margin-right: 2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #00000020;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.addon_checkbox.active {
+  background-color: var(--color-navy);
+  color: white;
+}
