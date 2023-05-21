@@ -117,8 +117,9 @@
   .form-plan_card {
     width: 100%;
     display: flex;
-    padding: 1rem;
+    padding: 1.3rem;
     margin-bottom: 1.5rem;
+    border-radius: 0.6rem;
   }
 
   .form-plan_card-icon {

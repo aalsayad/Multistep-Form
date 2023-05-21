@@ -3,7 +3,7 @@ import Info from './FormSections/Info';
 import Plan from './FormSections/Plan';
 import Addons from './FormSections/Addons';
 import Summary from './FormSections/Summary';
-import BgVideo from '../../assets/animated-BG.webm';
+import BgVideo from '../../assets/backgroundmp4.mp4';
 import Steps from './Steps/Steps';
 import './Form.styles.css';
 import { useState } from 'react';
@@ -71,8 +71,8 @@ function Form() {
               );
             })}
             <div className='form_steps-video'>
-              <video className='form_steps-videofile' autoPlay muted loop>
-                <source src={BgVideo} type='video/webm' />
+              <video className='form_steps-videofile' autoPlay muted loop playsInline>
+                <source src={BgVideo} type='video/mp4' />
               </video>
             </div>
           </div>

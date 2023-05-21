@@ -10,19 +10,6 @@
   z-index: 999;
 }
 
-@media (max-width: 950px) {
-  .step_container {
-    width: unset;
-    margin: 0;
-    padding: 0;
-    height: unset;
-  }
-
-  .step_info {
-    display: none;
-  }
-}
-
 .step_container:hover {
   background-color: #ffffff20;
   backdrop-filter: blur(10px);
@@ -47,12 +34,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-@media (max-width: 950px) {
-  .step_circle-no {
-    margin: 0;
-  }
-}
-
 .step_circle-no.active {
   background-color: var(--color-light-blue);
   color: var(--color-navy);
@@ -70,4 +51,22 @@
 .step_info-title {
   font-size: 1.6rem;
   font-weight: 500;
+}
+
+@media (max-width: 950px) {
+  .step_container {
+    width: unset;
+    margin: 0;
+    padding: 0;
+    height: unset;
+    border-radius: 100%;
+  }
+
+  .step_info {
+    display: none;
+  }
+
+  .step_circle-no {
+    margin: 0;
+  }
 }

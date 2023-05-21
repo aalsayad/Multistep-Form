@@ -214,6 +214,7 @@
     grid-template-rows: 20vh 57vh 7vh;
     background-color: transparent;
   }
+
   .form_steps-container {
     grid-row: unset;
     border-radius: 0;
@@ -223,6 +224,17 @@
     padding-top: 6vh;
     gap: 1.5rem;
   }
+
+  .form_steps-videofile {
+    opacity: 0.75;
+    position: absolute;
+    height: 300%;
+    width: 100%;
+    top: -200%;
+    left: 0;
+    object-fit: cover;
+  }
+
   .form_sections {
     background-color: white;
     z-index: 999;
