@@ -1,6 +1,6 @@
 import React from 'react';
 import './AddonCard.styles.css';
-import { BsCheckLg } from 'react-icons/Bs';
+import { BsCheckLg } from 'react-icons/bs';
 import useFormStore from '../../../Stores/FormStore';
 
 function AddonCard({ id, fees, title, description, selected }) {

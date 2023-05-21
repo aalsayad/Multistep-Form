@@ -1,5 +1,6 @@
 import React from 'react';
 import './Plan.styles.css';
+import { MdOutlineLocalOffer } from 'react-icons/md';
 import PlanCard from './PlanCard';
 import useFormStore from '../../../Stores/FormStore';
 
@@ -23,6 +24,7 @@ function PlanSelection() {
       </div>
       <div className='form_monthly-toggle-container'>
         <div className='flex'>
+          <MdOutlineLocalOffer size={'15px'} style={{ marginRight: '10px' }} />
           <p>Save More with Yearly Subscriptions</p>
         </div>
 
