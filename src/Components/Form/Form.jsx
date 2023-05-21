@@ -7,6 +7,7 @@ import BgVideo from '../../assets/animated-BG.webm';
 import Steps from './Steps/Steps';
 import './Form.styles.css';
 import { useState } from 'react';
+import { AiOutlineRight } from 'react-icons/ai';
 
 function Form() {
   //State to check for Info form completion
