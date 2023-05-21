@@ -8,8 +8,11 @@ import Steps from './Steps/Steps';
 import './Form.styles.css';
 import { useState } from 'react';
 import { AiOutlineRight } from 'react-icons/ai';
+import useFormStore from '../../Stores/FormStore';
 
 function Form() {
+  //Get Global States
+  const formSummary = useFormStore((state) => state.summary);
   //State to check for Info form completion
   const [navigationEnabled, setNavigationEnabled] = useState(false);
 
@@ -46,7 +49,8 @@ function Form() {
   };
 
   const handleSubmit = () => {
-    console.log('submit');
+    console.log('Form Submitted');
+    console.log(formSummary);
   };
 
   return (
@@ -76,7 +80,7 @@ function Form() {
             {currentStep === 1 && <Info setNavigationEnabled={setNavigationEnabled} />}
             {currentStep === 2 && <Plan />}
             {currentStep === 3 && <Addons />}
-            {currentStep === 4 && <Summary />}
+            {currentStep === 4 && <Summary setCurrentStep={setCurrentStep} />}
           </div>
           <div className='form_buttons-container'>
             {currentStep !== 1 ? (

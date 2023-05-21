@@ -21,7 +21,8 @@ function Addons() {
               title={addon.title}
               id={addon.id}
               description={addon.description}
-              fees={addon.fees}
+              monthlyPrice={addon.monthlyPrice}
+              yearlyPrice={addon.yearlyPrice}
               selected={addon.selected}
             />
           );

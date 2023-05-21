@@ -3,9 +3,10 @@ import './AddonCard.styles.css';
 import { BsCheckLg } from 'react-icons/bs';
 import useFormStore from '../../../Stores/FormStore';
 
-function AddonCard({ id, fees, title, description, selected }) {
-  //Get Store
+function AddonCard({ id, fees, title, description, selected, monthlyPrice, yearlyPrice }) {
+  //Get global Store
   const updateAddons = useFormStore((state) => state.updateAddons);
+  const yearlyBilling = useFormStore((state) => state.yearlyBilling);
 
   //Update Store with new addons
   const handleAddonSelect = (id) => {
@@ -23,7 +24,7 @@ function AddonCard({ id, fees, title, description, selected }) {
           </div>
         </div>
 
-        <div className='addon_fees'>{fees}</div>
+        <div className='addon_fees'>{yearlyBilling ? yearlyPrice : monthlyPrice}</div>
       </div>
     </>
   );

@@ -49,24 +49,35 @@ const useFormStore = create((set, get) => ({
       id: 1,
       title: 'Online service',
       description: 'Access to multiplayer games',
-      fees: '+$1/month',
+      monthlyPrice: '+$1/month',
+      yearlyPrice: '+$10/year',
       selected: true,
     },
     {
       id: 2,
       title: 'Larger storage',
       description: 'Extra 1TB of cloud save',
-      fees: '+$2/month',
+      monthlyPrice: '+$2/month',
+      yearlyPrice: '+$20/year',
       selected: false,
     },
     {
       id: 3,
       title: 'Customizable Profile',
       description: 'Access to multiplayer games',
-      fees: '+$2/month',
+      monthlyPrice: '+$2/month',
+      yearlyPrice: '+$20/year',
       selected: false,
     },
   ],
+
+  summary: {
+    info: {},
+    plan: {},
+    addons: [],
+    totalPrice: 0,
+  },
+
   updateInfo: (name, value) => set((state) => ({ info: { ...state.info, [name]: value } })),
   updatePlans: (id) => {
     const plans = get().plans;
@@ -122,6 +133,49 @@ const useFormStore = create((set, get) => ({
       infoErrors: {
         ...currentInfoErrors,
         [fieldName]: errorString,
+      },
+    }));
+  },
+
+  updateSummary: () => {
+    const info = get().info;
+    const plans = get().plans;
+    const addons = get().addons;
+    const yearlyBilling = get().yearlyBilling;
+
+    //Filtering
+    let selectedPlan = plans.filter((plan) => plan.selected);
+
+    let selectedAddons = addons.filter((addon) => addon.selected);
+
+    //Calculate total cost
+    let totalCostArray = [];
+    if (!yearlyBilling) {
+      const planPrice = selectedPlan[0].monthlyPrice;
+      totalCostArray.push(planPrice);
+      selectedAddons.map((selectedAddon) => {
+        totalCostArray.push(selectedAddon.monthlyPrice);
+      });
+    } else if (yearlyBilling) {
+      const planPrice = selectedPlan[0].yearlyPrice;
+      totalCostArray.push(planPrice);
+      selectedAddons.map((selectedAddon) => {
+        totalCostArray.push(selectedAddon.yearlyPrice);
+      });
+    }
+    let sum = 0;
+    for (let i = 0; i < totalCostArray.length; i++) {
+      const extractedNumbers = parseInt(totalCostArray[i].match(/\d+/)[0]);
+      sum += extractedNumbers;
+    }
+
+    set(() => ({
+      summary: {
+        info: info,
+        plan: selectedPlan,
+        addons: selectedAddons,
+        yearlyBilling: yearlyBilling,
+        totalPrice: sum,
       },
     }));
   },

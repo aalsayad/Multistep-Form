@@ -6,16 +6,18 @@
   padding: 2rem;
   border-radius: 1rem;
   cursor: pointer;
-  backdrop-filter: blur(15px);
+
   transition: all 0.3s ease-in-out;
 }
 
 .step_container:hover {
   background-color: #ffffff20;
+  backdrop-filter: blur(10px);
 }
 
 .step_container.active {
   background-color: #ffffff20;
+  backdrop-filter: blur(18px);
 }
 
 .step_circle-no {

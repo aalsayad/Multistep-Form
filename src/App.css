@@ -34,8 +34,19 @@ body {
   display: flex;
   align-items: center;
 }
+
+.flex.spacebetween {
+  justify-content: space-between;
+}
 .disabled {
   cursor: pointer;
   pointer-events: none;
   opacity: 0.3;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #00000010;
+  margin: 2.5rem 0;
 }
