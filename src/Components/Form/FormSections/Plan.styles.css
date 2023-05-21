@@ -109,3 +109,77 @@
   left: unset;
   right: 10%;
 }
+
+@media (max-width: 950px) {
+  .form-plan_cards-container {
+    flex-direction: column;
+  }
+  .form-plan_card {
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-plan_card-icon {
+    background-color: var(--color-navy);
+    width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-right: 2rem;
+  }
+
+  .form-plan_card-content h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .form-plan_card-content h4 {
+    color: #00000090;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .form_monthly-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .form_toggle-p {
+    font-size: 1.1rem;
+  }
+
+  .form_toggle-p.active {
+    opacity: 1;
+  }
+
+  .form_monthly-toggle {
+    width: 4rem;
+    height: 1.8rem;
+    margin: 0 0.5rem;
+  }
+
+  .form_monthly-toggle-dot {
+    background-color: #fff;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 0.39rem;
+    left: 10%;
+    border-radius: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .form_monthly-toggle-dot.yearly {
+    left: unset;
+    right: 10%;
+  }
+}

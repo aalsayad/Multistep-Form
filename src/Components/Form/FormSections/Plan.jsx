@@ -25,7 +25,9 @@ function PlanSelection() {
       <div className='form_monthly-toggle-container'>
         <div className='flex'>
           <MdOutlineLocalOffer size={'15px'} style={{ marginRight: '10px' }} />
-          <p>Save More with Yearly Subscriptions</p>
+          <p>
+            Save More with <br></br> Yearly Subscriptions
+          </p>
         </div>
 
         <div className='flex'>
