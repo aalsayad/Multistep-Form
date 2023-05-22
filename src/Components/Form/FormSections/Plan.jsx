@@ -3,6 +3,8 @@ import './Plan.styles.css';
 import { MdOutlineLocalOffer } from 'react-icons/md';
 import PlanCard from './PlanCard';
 import useFormStore from '../../../Stores/FormStore';
+import { useAnimate, cubicBezier, stagger, easeInOut } from 'framer-motion';
+import { useEffect } from 'react';
 
 function PlanSelection() {
   //Access Store for Plans
@@ -15,9 +17,22 @@ function PlanSelection() {
     toggleBilling();
   };
 
+  //Animations
+  const [scope, animate] = useAnimate();
+  useEffect(() => {
+    const easing = cubicBezier(0.76, 0, 0.24, 1);
+    const startAnimation = () => {
+      animate([
+        ['#plan_card', { y: [20, 0] }, { ease: easing, duration: 0.3, delay: stagger(0.05) }],
+        ['#plan_card', { opacity: [0, 1] }, { ease: easing, duration: 0.75, delay: stagger(0.05), at: 0 }],
+      ]);
+    };
+    startAnimation();
+  }, []);
+
   //Render
   return (
-    <>
+    <div ref={scope}>
       <div className='form_section-heading-group'>
         <h1 className='form_section-heading'>Select Your Plan</h1>
         <h3 className='form_section-subheading'>You have the option of monthly or yearly billing.</h3>
@@ -54,7 +69,7 @@ function PlanSelection() {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 

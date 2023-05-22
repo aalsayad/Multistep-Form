@@ -79,6 +79,7 @@ function Form() {
             {stepTitles.map((step) => {
               return (
                 <Steps
+                  key={step.id}
                   number={step.id}
                   title={step.title}
                   setCurrentStep={setCurrentStep}

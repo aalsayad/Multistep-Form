@@ -1,5 +1,6 @@
 import React from 'react';
 import useFormStore from '../../../Stores/FormStore';
+import { motion } from 'framer-motion';
 
 function PlanCard({ id, title, color, icon, monthlyPrice, yearlyPrice, selected }) {
   //Access Store State
@@ -13,7 +14,12 @@ function PlanCard({ id, title, color, icon, monthlyPrice, yearlyPrice, selected 
 
   //Render
   return (
-    <div onClick={() => handlePlanSelection(id)} className={`form-plan_card ${selected && 'selected'}`}>
+    <motion.div
+      // initial={{ opacity: 0, y: 20 }}
+      id='plan_card'
+      onClick={() => handlePlanSelection(id)}
+      className={`form-plan_card ${selected && 'selected'}`}
+    >
       <div style={{ background: color }} className='form-plan_card-icon'>
         <i id='plan_icon' className={`${icon} ${title}`}></i>
       </div>
@@ -21,7 +27,7 @@ function PlanCard({ id, title, color, icon, monthlyPrice, yearlyPrice, selected 
         <h3>{title}</h3>
         <h4>{yearlyBilling ? yearlyPrice : monthlyPrice}</h4>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
