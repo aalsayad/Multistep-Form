@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useFormStore from '../../../Stores/FormStore';
 import './Summary.styles.css';
+import { useAnimate, stagger } from 'framer-motion';
 
 export default function Summary({ setCurrentStep }) {
   //Access Store for Plans
@@ -11,14 +12,23 @@ export default function Summary({ setCurrentStep }) {
     updateSummary();
   }, []);
 
+  //Animations
+  const [scope, animate] = useAnimate();
+  useEffect(() => {
+    const startAnimation = () => {
+      animate('#animate-up', { y: [20, 0], opacity: [0, 1] }, { duration: 0.45, delay: stagger(0.05) });
+    };
+    startAnimation();
+  }, []);
+
   return (
-    <>
+    <div ref={scope}>
       <div className='form_section-heading-group'>
         <h1 className='form_section-heading'>Finishing Up</h1>
         <h3 className='form_section-subheading'>Double check everything looks OK before confirming.</h3>
       </div>
 
-      <div className='summary_container'>
+      <div id='animate-up' className='summary_container'>
         <div className='summary_plan flex spacebetween'>
           <div className='summary_selectedplan'>
             <h3>
@@ -47,10 +57,10 @@ export default function Summary({ setCurrentStep }) {
           })}
         </div>
       </div>
-      <div className='summary_total-container flex spacebetween'>
+      <div id='animate-up' className='summary_total-container flex spacebetween'>
         <h4>{`Total ${summary.yearlyBilling ? '(per year)' : '(per month)'}`}</h4>
         <h3>{`$${summary.totalPrice}/${summary.yearlyBilling ? 'year' : 'month'}`}</h3>
       </div>
-    </>
+    </div>
   );
 }

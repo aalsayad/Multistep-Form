@@ -52,9 +52,8 @@ function PlanSelection() {
       <div className='form-plan_cards-container'>
         {plans.map((plan) => {
           return (
-            <div id='animate-plan-card'>
+            <div key={plan.id} id='animate-plan-card'>
               <PlanCard
-                key={plan.id}
                 id={plan.id}
                 title={plan.title}
                 icon={plan.icon}

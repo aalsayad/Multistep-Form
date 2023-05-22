@@ -9,7 +9,7 @@ import './Form.styles.css';
 import { useState } from 'react';
 import { AiOutlineRight } from 'react-icons/ai';
 import useFormStore from '../../Stores/FormStore';
-import { useAnimate, stagger, cubicBezier } from 'framer-motion';
+import { useAnimate, stagger } from 'framer-motion';
 
 function Form() {
   //Get Global States
