@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Info from './FormSections/Info';
 import Plan from './FormSections/Plan';
 import Addons from './FormSections/Addons';
@@ -9,6 +9,7 @@ import './Form.styles.css';
 import { useState } from 'react';
 import { AiOutlineRight } from 'react-icons/ai';
 import useFormStore from '../../Stores/FormStore';
+import { useAnimate, stagger, cubicBezier } from 'framer-motion';
 
 function Form() {
   //Get Global States
@@ -53,15 +54,28 @@ function Form() {
     console.log(formSummary);
   };
 
+  //animations
+  const [scope, animate] = useAnimate();
+  useEffect(() => {
+    const easing = cubicBezier(0.76, 0, 0.24, 1);
+    const startAnimation = () => {
+      animate([
+        ['.form_steps-container', { y: [-5, 0] }, { ease: easing, duration: 1.5 }],
+        ['#step-animate', { y: 0 }, { ease: easing, duration: 0.6, delay: stagger(0.1), at: 0 }],
+        ['#step-animate', { opacity: 1 }, { ease: easing, duration: 0.6, delay: stagger(0.1), at: 0.4 }],
+      ]);
+    };
+    startAnimation();
+  }, []);
+
   return (
     <>
-      <div className='fullscreen-centered'>
+      <div ref={scope} className='fullscreen-centered'>
         <div className='form_container'>
           <div className='form_steps-container'>
             {stepTitles.map((step) => {
               return (
                 <Steps
-                  key={step.id}
                   number={step.id}
                   title={step.title}
                   setCurrentStep={setCurrentStep}
@@ -70,6 +84,7 @@ function Form() {
                 />
               );
             })}
+
             <div className='form_steps-video'>
               <video className='form_steps-videofile' autoPlay muted loop playsInline>
                 <source src={BgVideo} type='video/mp4' />

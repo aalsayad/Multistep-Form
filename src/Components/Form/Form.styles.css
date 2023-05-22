@@ -213,6 +213,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 20vh 57vh 7vh;
     background-color: transparent;
+    overflow: hidden;
   }
 
   .form_steps-container {
