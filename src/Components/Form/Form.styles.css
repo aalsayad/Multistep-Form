@@ -200,6 +200,7 @@
   .fullscreen-centered {
     justify-content: flex-start;
     align-items: flex-start;
+    max-height: 100dvh;
   }
 
   .form_container {
