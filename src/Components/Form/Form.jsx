@@ -60,9 +60,12 @@ function Form() {
     const easing = cubicBezier(0.76, 0, 0.24, 1);
     const startAnimation = () => {
       animate([
-        ['.form_steps-container', { y: [-5, 0] }, { ease: easing, duration: 1.5 }],
-        ['#step-animate', { y: 0 }, { ease: easing, duration: 0.6, delay: stagger(0.1), at: 0 }],
-        ['#step-animate', { opacity: 1 }, { ease: easing, duration: 0.6, delay: stagger(0.1), at: 0.4 }],
+        [scope.current, { opacity: [0, 1], y: [50, 0] }, { ease: easing, duration: 1, delay: 0.8 }],
+        ['.form_steps-container', { y: [-5, 0] }, { ease: easing, duration: 1.5, at: 1 }],
+        ['#step-animate', { y: 0 }, { ease: easing, duration: 0.6, delay: stagger(0.1), at: 1 }],
+        ['#step-animate', { opacity: 1 }, { ease: easing, duration: 0.6, delay: stagger(0.1), at: 1.4 }],
+        ['.form_sections', { y: [30, 0], opacity: [0, 1] }, { ease: easing, duration: 1.5, at: 1 }],
+        ['.form_buttons-container', { y: [30, 0], opacity: [0, 1] }, { ease: easing, duration: 1.5, at: 1.2 }],
       ]);
     };
     startAnimation();
