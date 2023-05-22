@@ -1,7 +1,7 @@
 import React from 'react';
 import AddonCard from './AddonCard';
 import useFormStore from '../../../Stores/FormStore';
-import { useAnimate, stagger, cubicBezier } from 'framer-motion';
+import { useAnimate, stagger } from 'framer-motion';
 import { useEffect } from 'react';
 
 function Addons() {
@@ -27,9 +27,8 @@ function Addons() {
       <div className='form_addons-container'>
         {addons.map((addon) => {
           return (
-            <div id='animate-addon-card'>
+            <div key={addon.id} id='animate-addon-card'>
               <AddonCard
-                key={addon.id}
                 title={addon.title}
                 id={addon.id}
                 description={addon.description}

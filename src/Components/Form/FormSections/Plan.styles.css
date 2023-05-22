@@ -117,6 +117,10 @@
   .form-plan_cards-container {
     flex-direction: column;
   }
+
+  #animate-plan-card {
+    width: 100%;
+  }
   .form-plan_card {
     width: 100%;
     display: flex;

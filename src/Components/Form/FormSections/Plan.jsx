@@ -3,7 +3,7 @@ import './Plan.styles.css';
 import { MdOutlineLocalOffer } from 'react-icons/md';
 import PlanCard from './PlanCard';
 import useFormStore from '../../../Stores/FormStore';
-import { useAnimate, cubicBezier, stagger, easeInOut } from 'framer-motion';
+import { useAnimate, stagger } from 'framer-motion';
 import { useEffect } from 'react';
 
 function PlanSelection() {
