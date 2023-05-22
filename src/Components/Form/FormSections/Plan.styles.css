@@ -3,8 +3,11 @@
   justify-content: space-between;
 }
 
-.form-plan_card {
+#animate-plan-card {
   width: 31%;
+}
+.form-plan_card {
+  width: 100%;
   border: 1px solid #00000020;
   padding: 1.8rem;
   border-radius: 1rem;

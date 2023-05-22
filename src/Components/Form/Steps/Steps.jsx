@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './Steps.styles.css';
 
 function Steps({ number, currentStep, setCurrentStep, title, navigationEnabled }) {

@@ -76,9 +76,8 @@ function Form() {
           <div className='form_steps-container'>
             {stepTitles.map((step) => {
               return (
-                <div id='fullstep_container'>
+                <div key={step.id} id='fullstep_container'>
                   <Steps
-                    key={step.id}
                     number={step.id}
                     title={step.title}
                     setCurrentStep={setCurrentStep}

@@ -20,12 +20,8 @@ function PlanSelection() {
   //Animations
   const [scope, animate] = useAnimate();
   useEffect(() => {
-    const easing = cubicBezier(0.85, 0, 0.15, 1);
-    const startAnimation = async () => {
-      await animate([
-        ['#plan_card', { y: [20, 0] }, { ease: easing, duration: 1.3, delay: stagger(0.05) }],
-        // ['#plan_card', { opacity: [0, 1] }, { ease: easing, duration: 1.75, delay: stagger(0.05), at: 0 }],
-      ]);
+    const startAnimation = () => {
+      animate('#animate-plan-card', { y: [20, 0], opacity: [0, 1] }, { duration: 0.45, delay: stagger(0.05) });
     };
     startAnimation();
   }, []);
@@ -56,16 +52,18 @@ function PlanSelection() {
       <div className='form-plan_cards-container'>
         {plans.map((plan) => {
           return (
-            <PlanCard
-              key={plan.id}
-              id={plan.id}
-              title={plan.title}
-              icon={plan.icon}
-              color={plan.color}
-              monthlyPrice={plan.monthlyPrice}
-              yearlyPrice={plan.yearlyPrice}
-              selected={plan.selected}
-            />
+            <div id='animate-plan-card'>
+              <PlanCard
+                key={plan.id}
+                id={plan.id}
+                title={plan.title}
+                icon={plan.icon}
+                color={plan.color}
+                monthlyPrice={plan.monthlyPrice}
+                yearlyPrice={plan.yearlyPrice}
+                selected={plan.selected}
+              />
+            </div>
           );
         })}
       </div>

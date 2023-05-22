@@ -11,12 +11,8 @@ function Addons() {
   //animations
   const [scope, animate] = useAnimate();
   useEffect(() => {
-    const easing = cubicBezier(0, 0.55, 0.45, 1);
     const startAnimation = () => {
-      animate([
-        ['#addon_card', { y: 0 }, { ease: easing, duration: 0.3, delay: stagger(0.05) }],
-        ['#addon_card', { opacity: 1 }, { ease: easing, duration: 0.75, delay: stagger(0.05), at: 0 }],
-      ]);
+      animate('#animate-addon-card', { y: [20, 0], opacity: [0, 1] }, { duration: 0.45, delay: stagger(0.05) });
     };
     startAnimation();
   }, []);
@@ -31,15 +27,17 @@ function Addons() {
       <div className='form_addons-container'>
         {addons.map((addon) => {
           return (
-            <AddonCard
-              key={addon.id}
-              title={addon.title}
-              id={addon.id}
-              description={addon.description}
-              monthlyPrice={addon.monthlyPrice}
-              yearlyPrice={addon.yearlyPrice}
-              selected={addon.selected}
-            />
+            <div id='animate-addon-card'>
+              <AddonCard
+                key={addon.id}
+                title={addon.title}
+                id={addon.id}
+                description={addon.description}
+                monthlyPrice={addon.monthlyPrice}
+                yearlyPrice={addon.yearlyPrice}
+                selected={addon.selected}
+              />
+            </div>
           );
         })}
       </div>
