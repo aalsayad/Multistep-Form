@@ -20,11 +20,11 @@ function PlanSelection() {
   //Animations
   const [scope, animate] = useAnimate();
   useEffect(() => {
-    const easing = cubicBezier(0.76, 0, 0.24, 1);
-    const startAnimation = () => {
-      animate([
-        ['#plan_card', { y: [20, 0] }, { ease: easing, duration: 0.3, delay: stagger(0.05) }],
-        ['#plan_card', { opacity: [0, 1] }, { ease: easing, duration: 0.75, delay: stagger(0.05), at: 0 }],
+    const easing = cubicBezier(0.85, 0, 0.15, 1);
+    const startAnimation = async () => {
+      await animate([
+        ['#plan_card', { y: [20, 0] }, { ease: easing, duration: 1.3, delay: stagger(0.05) }],
+        // ['#plan_card', { opacity: [0, 1] }, { ease: easing, duration: 1.75, delay: stagger(0.05), at: 0 }],
       ]);
     };
     startAnimation();

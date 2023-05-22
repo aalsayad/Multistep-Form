@@ -57,15 +57,13 @@ function Form() {
   //animations
   const [scope, animate] = useAnimate();
   useEffect(() => {
-    const easing = cubicBezier(0.76, 0, 0.24, 1);
     const startAnimation = () => {
       animate([
-        [scope.current, { opacity: [0, 1], y: [50, 0] }, { ease: easing, duration: 1, delay: 0.8 }],
-        ['.form_steps-container', { y: [-5, 0] }, { ease: easing, duration: 1.5, at: 1 }],
-        ['#step-animate', { y: 0 }, { ease: easing, duration: 0.6, delay: stagger(0.1), at: 1 }],
-        ['#step-animate', { opacity: 1 }, { ease: easing, duration: 0.6, delay: stagger(0.1), at: 1.4 }],
-        ['.form_sections', { y: [30, 0], opacity: [0, 1] }, { ease: easing, duration: 1.5, at: 1 }],
-        ['.form_buttons-container', { y: [30, 0], opacity: [0, 1] }, { ease: easing, duration: 1.5, at: 1.2 }],
+        [scope.current, { opacity: [0, 1] }, { duration: 0.1, delay: 1 }],
+        ['#fullstep_container', { y: [20, 0] }, { duration: 0.6, delay: stagger(0.1) }],
+        ['#fullstep_container', { opacity: [0, 1] }, { duration: 0.6, delay: stagger(0.1), at: '<' }],
+        ['.form_sections', { y: [30, 0] }, { duration: 0.3, at: 1 }],
+        ['.form_buttons-container', { y: [30, 0] }, { duration: 0.4, at: 1.1 }],
       ]);
     };
     startAnimation();
@@ -78,14 +76,16 @@ function Form() {
           <div className='form_steps-container'>
             {stepTitles.map((step) => {
               return (
-                <Steps
-                  key={step.id}
-                  number={step.id}
-                  title={step.title}
-                  setCurrentStep={setCurrentStep}
-                  currentStep={currentStep}
-                  navigationEnabled={navigationEnabled}
-                />
+                <div id='fullstep_container'>
+                  <Steps
+                    key={step.id}
+                    number={step.id}
+                    title={step.title}
+                    setCurrentStep={setCurrentStep}
+                    currentStep={currentStep}
+                    navigationEnabled={navigationEnabled}
+                  />
+                </div>
               );
             })}
 

@@ -11,7 +11,7 @@ function Addons() {
   //animations
   const [scope, animate] = useAnimate();
   useEffect(() => {
-    const easing = cubicBezier(0.76, 0, 0.24, 1);
+    const easing = cubicBezier(0, 0.55, 0.45, 1);
     const startAnimation = () => {
       animate([
         ['#addon_card', { y: 0 }, { ease: easing, duration: 0.3, delay: stagger(0.05) }],
